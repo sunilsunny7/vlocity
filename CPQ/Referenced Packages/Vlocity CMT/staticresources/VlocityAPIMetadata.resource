@@ -1,0 +1,10 @@
+APIHandler__c,APIParams__c,APIResponseHandler__c,APIUrl__c,IsActive__c,APIName__c,Sequence__c
+DefaultCtxCombinationsCHandler,{"batchSize":1},,,TRUE,ContextEligibilityGenerator,1
+DefaultGetOfferHierarchyCHandler,{"batchSize":1},,,TRUE,GetOffersHierarchyHelper,2
+DefaultGetOffersCHandler,,DefaultGetOffersRHandler,/v3/catalogs/{catalog_code}/offers,TRUE,GetOffers,3
+DefaultGetRelatedOffersCHandler,,DefaultGetRelatedOffersRHandler,/v3/catalogs/{catalogCode}/offers?contains={productCode}&context={contextParams},TRUE,GetContainOffers,4
+DefaultGetPricesCHandler,{"batchSize":20__COMMA_TOKEN__"scopeAll":true},DefaultGetPricesCHandler,/v3/prices,true,GetPrices,5
+DefaultGetOfferDetailsCHandler,{"batchSize":1},DefaultGetOfferDetailsRHandler,/v3/catalogs/{catalog_code}/offers/{offer_code},TRUE,GetOfferDetails,6
+null,,DefaultConfigureOfferRHandler,/v3/catalogs/{catalog_code}/offers/{offer_code},TRUE,ConfigureOfferDetail,7
+null,,DefaultCreateEcomCartRHandler,/v3/carts,TRUE,CreateEcomCart,8
+null,,DefaultBasketOperationsRHandler,,TRUE,basketOperations,9

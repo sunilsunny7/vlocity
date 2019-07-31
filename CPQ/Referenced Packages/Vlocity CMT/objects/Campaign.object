@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <compactLayouts>
+        <fullName>HighlightPanel</fullName>
+        <fields>Name</fields>
+        <fields>Type</fields>
+        <fields>Status</fields>
+        <fields>EndDate</fields>
+        <fields>StartDate</fields>
+        <label>Highlight Panel</label>
+    </compactLayouts>
+    <fieldSets>
+        <fullName>StoryFieldSet</fullName>
+        <description>Story board</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Status</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>IsActive</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Type</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>StoryFieldSet</label>
+    </fieldSets>
+    <fields>
+        <fullName>CampaignContentDocumentId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>ID of the primary document (or other content) that is the subject of the campaign. Could be content being promoted in the campaign or a script to be used when talking to campaign targets. Points to the child Campaign Content Document (CampaignContentDocument__c) record that associates a Salesforce File with a Campaign.</description>
+        <externalId>false</externalId>
+        <label>Campaign Content Document</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>CampaignContentDocument__c.CampaignId__c</field>
+                <operation>equals</operation>
+                <valueField>$Source.Id</valueField>
+            </filterItems>
+            <filterItems>
+                <field>CampaignContentDocument__c.IsPrimary__c</field>
+                <operation>equals</operation>
+                <value>True</value>
+            </filterItems>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>CampaignContentDocument__c</referenceTo>
+        <relationshipLabel>Campaigns</relationshipLabel>
+        <relationshipName>Campaigns</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ContentDocumentTitle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Formula: Title as defined on the campaign content document association record.</description>
+        <externalId>false</externalId>
+        <formula>CampaignContentDocumentId__r.ContentTitle__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Content Document Title</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EmailTemplate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Name of the email template to send to campaign members. Matches the Template Unique Name (DeveloperName) of a Salesforce Email Template (EmailTemplate object).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Email template used to send email to campaign member.</inlineHelpText>
+        <label>Email Template</label>
+        <length>80</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>FollowUpTo__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Identifies the type of object that should be created when a user creates a &quot;follow up&quot; item for this campaign. Values must be one of “Log Call”, “Case”, “Event”, “Opportunity”, “Task”, “Order”.</description>
+        <externalId>false</externalId>
+        <label>Follow Up To</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MassEmailContent__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Content</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>MassEmailSubject__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Email Subject</label>
+        <required>false</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>ProcessLanguage__c</fullName>
+        <defaultValue>&apos;English&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used to associate a Vlocity OmniScript to run when executing the campaign for each target. Process Language specifies the Language value of the OmniScript.</description>
+        <externalId>false</externalId>
+        <label>Process Language</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProcessPrefillBundle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Used when executing the campaign for each target via a Vlocity OmniScript. The Process Prefill Bundle specifies the prefill DataRaptor mapping bundle to use when launching the OmniScript.</description>
+        <externalId>false</externalId>
+        <label>Process Prefill Bundle</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProcessSubType__c</fullName>
+        <defaultValue>&apos;Default&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used to associate a Vlocity OmniScript to run when executing the campaign for each target. Process Sub Type specifies the Sub Type value of the OmniScript.</description>
+        <externalId>false</externalId>
+        <label>Process Sub Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProcessType__c</fullName>
+        <defaultValue>&apos;Campaign&apos;</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Used to associate a Vlocity OmniScript to run when executing the campaign for each target. Process Type specifies the Type value of the OmniScript.</description>
+        <externalId>false</externalId>
+        <label>Process Type</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <recordTypes>
+        <fullName>MobilePhoneCampaign</fullName>
+        <active>true</active>
+        <description>Mobile Phone Campaign</description>
+        <label>MobilePhoneCampaign</label>
+        <picklistValues>
+            <picklist>Status</picklist>
+            <values>
+                <fullName>Aborted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Completed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Planned</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Banner Ads</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partners</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Referral Program</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar %2F Conference</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Telemarketing</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+</CustomObject>

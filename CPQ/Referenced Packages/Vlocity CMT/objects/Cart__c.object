@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AccountId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>ID of the account that identifies the customer for the cart.</description>
+        <externalId>false</externalId>
+        <label>Customer Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Cart</relationshipLabel>
+        <relationshipName>Cart</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CartCreatedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date and time when this cart was first created in the source system.</description>
+        <externalId>false</externalId>
+        <label>Cart Created</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CartLastModifiedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date and time when this cart was last modified in the source system.</description>
+        <externalId>false</externalId>
+        <label>Cart Last Modified</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CartUrl__c</fullName>
+        <deprecated>false</deprecated>
+        <description>URL to this cart in the source system.</description>
+        <externalId>false</externalId>
+        <label>Cart URL</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Channel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Channel through which this cart was captured.</description>
+        <externalId>false</externalId>
+        <label>Channel</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Call Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Mobile</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Web</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CheckoutCompletedDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date and time when checkout for this cart was completed.</description>
+        <externalId>false</externalId>
+        <label>Checkout Completed</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ContactId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>ID of the contact who is (or was) the shopper on this cart.</description>
+        <externalId>false</externalId>
+        <label>Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Cart</relationshipLabel>
+        <relationshipName>Cart</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>LeadId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>ID of the lead for which the cart has been captured.</description>
+        <externalId>false</externalId>
+        <label>Lead</label>
+        <referenceTo>Lead</referenceTo>
+        <relationshipLabel>Cart</relationshipLabel>
+        <relationshipName>Cart</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>OneTimeTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total non-recurring charges to be paid up front at check-out for the cart.</description>
+        <externalId>false</externalId>
+        <label>Total: One Time Charges</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ProgressPercentage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>An estimated percentage completion through the shopping and check-out process for this cart.</description>
+        <externalId>false</externalId>
+        <label>Progress</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>RecurringTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Total monthly recurring charges for everything in the cart.</description>
+        <externalId>false</externalId>
+        <label>Total: Monthly Charges</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>ShopperIpAddress__c</fullName>
+        <deprecated>false</deprecated>
+        <description>IP address of the shopper for this cart.</description>
+        <externalId>false</externalId>
+        <label>Shopper IP</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SourceSystem__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The name of the source system that captured the cart.</description>
+        <externalId>false</externalId>
+        <label>Source System</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status of this cart.</description>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Draft</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Abandoned</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Submitted</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Cart</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Cart Number</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Cart</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>LeadId__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>AccountId__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ContactId__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Channel__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ProgressPercentage__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>SourceSystem__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>RecurringTotal__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OneTimeTotal__c</customTabListAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+</CustomObject>

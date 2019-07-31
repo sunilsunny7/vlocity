@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <description>Represents a section of a document template. There can be multiple type of sections such as clauses, images, context sections, embedded template sections, signature sections and so on.</description>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>AutoAddSectionKey__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>AutoAdd Section Key</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ConditionalExpression__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Conditional Expression</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CountOfSectionConditions__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Count of section conditions</description>
+        <externalId>false</externalId>
+        <label>Section Conditions</label>
+        <summaryForeignKey>DocumentTemplateSectionCondition__c.DocumentTemplateSectionId__c</summaryForeignKey>
+        <summaryOperation>count</summaryOperation>
+        <trackTrending>false</trackTrending>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>CustomClassName__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Custom class name (if any) attached to this section</description>
+        <externalId>false</externalId>
+        <label>Custom Class</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DisplayHeaderInline__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Denotes whether the section following the section header will be displayed inline</description>
+        <externalId>false</externalId>
+        <label>Display Header Inline</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DisplayHeader__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Display Header</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>DisplaySectionName__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Display name of the section</description>
+        <externalId>false</externalId>
+        <label>Display Section Name</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>DocumentClauseId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Document clause (if any) associated with this section</description>
+        <externalId>false</externalId>
+        <label>Document Clause</label>
+        <referenceTo>DocumentClause__c</referenceTo>
+        <relationshipLabel>Document Template Sections</relationshipLabel>
+        <relationshipName>DocumentTemplate_Sections_del</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DocumentTemplateId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Document Template ID</description>
+        <externalId>false</externalId>
+        <label>Document Template</label>
+        <referenceTo>DocumentTemplate__c</referenceTo>
+        <relationshipLabel>Document Template Sections</relationshipLabel>
+        <relationshipName>DocumentTemplate_Sections</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>EmbeddedTemplateId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Embedded Tempate (if any) associated with this section</description>
+        <externalId>false</externalId>
+        <label>Embedded Document Template</label>
+        <referenceTo>DocumentTemplate__c</referenceTo>
+        <relationshipLabel>Document Template Sections (Document Template)</relationshipLabel>
+        <relationshipName>Document_Template_Sections</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>EmbeddedTemplateTokenDRBundleName__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>EmbeddedTemplateId__r.TokenDRBundleName__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Embedded Template Token DR</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsBatchProcessed__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Generate in Batch</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsInNewPage__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>If this section needs to start on a new page (applicable to Word document)</description>
+        <externalId>false</externalId>
+        <label>New Page</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsRestricted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Restrict the section for editing</description>
+        <externalId>false</externalId>
+        <label>Restricted</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsWordTableHeaderRepeated__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Repeat Table Header in Word</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ItemSectionDisplayStyle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Display style if this section is an item section</description>
+        <externalId>false</externalId>
+        <label>Item Section Display Style</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ItemSectionFontStyle__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Font style if this section is an item section</description>
+        <externalId>false</externalId>
+        <label>Item Section Font Style</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Level__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Level of this section in hierarchy</description>
+        <externalId>false</externalId>
+        <label>Level</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>NeedAutoSectionNumber__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Denoted if section numbering is auto generated</description>
+        <externalId>false</externalId>
+        <label>Auto Section Number</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>ParentSectionId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Parent section identifier</description>
+        <externalId>false</externalId>
+        <label>Parent Template Section</label>
+        <referenceTo>DocumentTemplateSection__c</referenceTo>
+        <relationshipName>Contract_Template_Sections</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ResetAutoNumber__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Reset the auto numbering</description>
+        <externalId>false</externalId>
+        <label>Reset Auto Number</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>SectionContent__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Section content stored as HTML or JSON</description>
+        <externalId>false</externalId>
+        <label>Section Content</label>
+        <length>131072</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SectionKey__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Section Key</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sequence__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Section sequence</description>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SignatureTokens__c</fullName>
+        <deprecated>false</deprecated>
+        <description>DocuSign signature tokens</description>
+        <externalId>false</externalId>
+        <label>Signature Tokens</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Tokens__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Tokens inserted into this section</description>
+        <externalId>false</externalId>
+        <label>Tokens</label>
+        <length>32768</length>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Section type</description>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Context</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Clause</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Conditional</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Signature</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Image</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Item</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Embedded Template</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Custom</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Repeating Content</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <label>Document Template Section</label>
+    <nameField>
+        <label>Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Document Template Sections</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

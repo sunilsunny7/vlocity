@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <deprecated>false</deprecated>
+    <enableActivities>false</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>ProductStructure</fullName>
+        <description>Product Structure page</description>
+        <displayedFields>
+            <field>MinMaxDefaultQty__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Product Structure</label>
+    </fieldSets>
+    <fields>
+        <fullName>ChildLineNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Sequence</label>
+        <length>255</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ChildProductId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Child Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Product Child Items (Child)</relationshipLabel>
+        <relationshipName>ProductChildItemsChild</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CollapseHierarchy__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field will be used to identify if the child products below this level should be collapsed or expanded.</description>
+        <externalId>false</externalId>
+        <label>Collapse Hierarchy</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>GlobalKey__c</fullName>
+        <deprecated>false</deprecated>
+        <description>The globally unique identifier of this Product Chlld Item. Used to identify the Product Chlld Item across Salesforce instances and potentially within other systems. Vlocity uses a UUID as described in http://en.wikipedia.org/wiki/Universally_unique_identifier, but when migrated from other initiating systems, any globally unique Product Chlld Item identifier can be used.</description>
+        <externalId>true</externalId>
+        <label>Global Key</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsOverride__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Is Override</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsRootProductChildItem__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>This field will be used to identify the root product child item record.
+Only one will be allowed for each root product.</description>
+        <externalId>false</externalId>
+        <label>Is Root Product Child Item</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>IsVirtualItem__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Virtual Item</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>MaxQuantity__c</fullName>
+        <defaultValue>99999</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Maximum quantity for this product in the line item</description>
+        <externalId>false</externalId>
+        <label>Max Quantity</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MaximumChildItemQuantity__c</fullName>
+        <defaultValue>99999</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Max Children Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MinMaxDefaultQty__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>TEXT(MinQuantity__c) &amp; &quot;, &quot; &amp; TEXT(MaxQuantity__c) &amp; &quot;, &quot; &amp; TEXT(Quantity__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Min, Max, Default</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MinQuantity__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Minimum quantity for this product in the line item.</description>
+        <externalId>false</externalId>
+        <label>Min Quantity</label>
+        <precision>16</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>MinimumChildItemQuantity__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Min Children Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ParentProductId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Parent Product</label>
+        <referenceTo>Product2</referenceTo>
+        <relationshipLabel>Product Child Items</relationshipLabel>
+        <relationshipName>ProductChildItems</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Quantity__c</fullName>
+        <defaultValue>1</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Default Quantity</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RelationshipType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>RelationshipType</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Child</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Realization</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>SelectionMethodImplementation__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Selection Method Implementation</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SeqNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>VALUE(ChildLineNumber__c)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>SeqNumber</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>Product Child Item</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Product Child Item Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Product Child Items</pluralLabel>
+    <searchLayouts/>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>ChildProductNonAssetizeRule</fullName>
+        <active>true</active>
+        <description>Non Assetizable Product can only have Non Assetizable children</description>
+        <errorConditionFormula>(ParentProductId__r.IsNotAssetizable__c &amp;&amp;  !ChildProductId__r.IsNotAssetizable__c )</errorConditionFormula>
+        <errorMessage>Cannot add Assetizable Child Product to a Non Assetizable Parent Product</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Default_greater_than_0</fullName>
+        <active>true</active>
+        <errorConditionFormula>Quantity__c  &lt;  0</errorConditionFormula>
+        <errorDisplayField>Quantity__c</errorDisplayField>
+        <errorMessage>Default Quantity should be greater than or equal to 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Default_greater_than_Min</fullName>
+        <active>true</active>
+        <errorConditionFormula>MinQuantity__c  &gt;  Quantity__c</errorConditionFormula>
+        <errorDisplayField>Quantity__c</errorDisplayField>
+        <errorMessage>Default Quantity must be greater than or equal to Min Quantity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Default_less_than_Max</fullName>
+        <active>true</active>
+        <errorConditionFormula>Quantity__c  &gt;  MaxQuantity__c</errorConditionFormula>
+        <errorDisplayField>Quantity__c</errorDisplayField>
+        <errorMessage>Default Quantity must be less than or equal to Max Quantity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Max_greater_than_0</fullName>
+        <active>true</active>
+        <errorConditionFormula>MaxQuantity__c  &lt;  0</errorConditionFormula>
+        <errorDisplayField>MaxQuantity__c</errorDisplayField>
+        <errorMessage>Max Quantity should be greater than or equal to 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Max_less_than_Min</fullName>
+        <active>true</active>
+        <errorConditionFormula>MaxQuantity__c  &lt;  MinQuantity__c</errorConditionFormula>
+        <errorDisplayField>MaxQuantity__c</errorDisplayField>
+        <errorMessage>Max Quantity must be greater than or equal to Min Quantity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Min_child_greater_than_Max_child_item</fullName>
+        <active>true</active>
+        <errorConditionFormula>MinimumChildItemQuantity__c &gt;  MaximumChildItemQuantity__c</errorConditionFormula>
+        <errorMessage>Min Children Quantity must be less than or equal to Max Children Quantity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Min_greater_than_0</fullName>
+        <active>true</active>
+        <errorConditionFormula>MinQuantity__c  &lt;  0</errorConditionFormula>
+        <errorDisplayField>MinQuantity__c</errorDisplayField>
+        <errorMessage>Min Quantity should be greater than or equal to 0</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Min_greater_than_Max</fullName>
+        <active>true</active>
+        <errorConditionFormula>MinQuantity__c  &gt;  MaxQuantity__c</errorConditionFormula>
+        <errorDisplayField>MinQuantity__c</errorDisplayField>
+        <errorMessage>Min Quantity must be less than or equal to Max Quantity</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ParentProduct_cannot_be_ChildProduct</fullName>
+        <active>true</active>
+        <errorConditionFormula>ParentProductId__c == ChildProductId__c</errorConditionFormula>
+        <errorDisplayField>ChildProductId__c</errorDisplayField>
+        <errorMessage>Parent Product cannot be added as Child Product</errorMessage>
+    </validationRules>
+</CustomObject>

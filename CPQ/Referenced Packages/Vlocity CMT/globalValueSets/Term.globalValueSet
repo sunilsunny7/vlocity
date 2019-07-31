@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Daily</fullName>
+        <default>false</default>
+    </customValue>
+    <customValue>
+        <fullName>Monthly</fullName>
+        <default>false</default>
+    </customValue>
+    <customValue>
+        <fullName>Semi-Annual</fullName>
+        <default>false</default>
+    </customValue>
+    <customValue>
+        <fullName>Annual</fullName>
+        <default>true</default>
+    </customValue>
+    <customValue>
+        <fullName>Custom</fullName>
+        <default>false</default>
+    </customValue>
+    <masterLabel>Term</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

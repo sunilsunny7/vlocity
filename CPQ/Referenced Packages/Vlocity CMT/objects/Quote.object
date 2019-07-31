@@ -1,0 +1,1138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>AccountRecordType__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Opportunity.AccountRecordType__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account Record Type</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>AccountSLA__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>Opportunity.AccountSLA__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Account SLA</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CampaignId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>DefaultCurrencyPaymentMode__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Default Currency Payment Mode</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Currency</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Loyalty</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>DeliveryInstallationStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Delivery Installation Status</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>In progress</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Yet to begin</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Completed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>EffectiveOneTimeLoyaltyTotal__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Effective Total: One Time Loyalty</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>EffectiveOneTimeTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Effective One Time Total</label>
+        <summarizedField>QuoteLineItem.EffectiveOneTimeTotal__c</summarizedField>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>EffectiveQuoteTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>EffectiveOneTimeTotal__c +  Tax + ( EffectiveRecurringTotal__c *  NumberOfContractedMonths__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Effective Quote Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>EffectiveRecurringTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Effective Recurring Total</label>
+        <summarizedField>QuoteLineItem.EffectiveRecurringTotal__c</summarizedField>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>FrameContractId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <description>Frame contract linked to this quote</description>
+        <externalId>false</externalId>
+        <label>Frame Contract</label>
+        <referenceTo>Contract</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Quotes1</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>IsContractRequired__c</fullName>
+        <defaultValue>false</defaultValue>
+        <deprecated>false</deprecated>
+        <description>Denotes if quote requires a contract</description>
+        <externalId>false</externalId>
+        <label>Require Contract</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LeadSource__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Lead Source</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Web</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Phone Inquiry</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Partner Referral</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Purchased List</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Other</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>NumberOfContractedMonths__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Number Of Contracted Months</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OneTimeLoyaltyTotal__c</fullName>
+        <defaultValue>0</defaultValue>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>One Time Loyalty Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OneTimeTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>One Time Total</label>
+        <summarizedField>QuoteLineItem.OneTimeTotal__c</summarizedField>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>OpportunityAccountId__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Formula: Opportunity&apos;s account identifier casted as a text value.</description>
+        <externalId>false</externalId>
+        <formula>Opportunity.AccountId</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Account Id</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>OriginatingChannel__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Channel can be used to drive Eligibility/Compatibility/Recommendations/Pricing/Other implementations, e.g. Certain Product Bundles are only available on the Web or Call Center channel but not via the Retail and Dealer channels OR A product may have a different price when sold via the Web than sold via the Retail channel, etc.</description>
+        <externalId>false</externalId>
+        <label>Originating Channel</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Web</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Call Center</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Retail</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Dealer</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>PoDate__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>PO Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>PoNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>PO Number</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>PriceListId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Price List</label>
+        <referenceTo>PriceList__c</referenceTo>
+        <relationshipLabel>Quotes Using This Price List</relationshipLabel>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>QuoteTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>OneTimeTotal__c +  Tax + ( RecurringTotal__c *  NumberOfContractedMonths__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Quote Total</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>RecurringTotal__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Recurring Total</label>
+        <summarizedField>QuoteLineItem.RecurringTotal__c</summarizedField>
+        <summaryForeignKey>QuoteLineItem.QuoteId</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>ShippingPostalCode__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ShippingPostalCode</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Shipping Postal Code</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ShippingState__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <formula>ShippingState</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Shipping State</label>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>SyncedOrderId__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Synced Order</label>
+        <referenceTo>Order</referenceTo>
+        <relationshipLabel>Quotes</relationshipLabel>
+        <relationshipName>Quotes</relationshipName>
+        <required>false</required>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>TrackingNumber__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Tracking Number</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Type__c</fullName>
+        <deprecated>false</deprecated>
+        <externalId>false</externalId>
+        <label>Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Existing Customer - Upgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Existing Customer - Replacement</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Existing Customer - Downgrade</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>New Customer</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>ValidationDate__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Date of last validation run</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date of last validation run</inlineHelpText>
+        <label>Validation Date</label>
+        <required>false</required>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>ValidationMessage__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Message from the last validation run</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Message from the last validation run</inlineHelpText>
+        <label>Validation Message</label>
+        <length>32768</length>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ValidationStatus__c</fullName>
+        <deprecated>false</deprecated>
+        <description>Status of the validation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The result status of the last validation run</inlineHelpText>
+        <label>Validation Status</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Not yet run</fullName>
+                    <default>true</default>
+                </value>
+                <value>
+                    <fullName>Passed</fullName>
+                    <default>false</default>
+                </value>
+                <value>
+                    <fullName>Failed</fullName>
+                    <default>false</default>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <webLinks>
+        <fullName>CPQ</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>CPQ</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/xdomain/xdomain.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+{!REQUIRESCRIPT(&quot;/support/console/31.0/integration.js&quot;)}
+var namespace_prefix = &apos;&apos;;
+var result = sforce.connection.describeGlobal();
+var TOKEN_OBJ = &quot;Party__c&quot;;
+var sobjects = result.getArray(&quot;sobjects&quot;);
+for(var i=0; i&lt;sobjects.length; i++) {
+var sobjName = sobjects[i].name;
+var str = sobjName.split(&quot;__&quot;);
+//if there are 3 values there is a namespace
+if (str.length == 3){
+var sobj = str[1].valueOf() +&apos;__c&apos;;
+if(sobj == TOKEN_OBJ) {
+namespace_prefix = str[0].valueOf();
+}
+}
+}
+var target_url = &apos;/apex/&apos;+namespace_prefix+&apos;__hybridcpq?id=&apos;+&apos;{!Quote.Id}&apos;;
+window.location.href = target_url;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Clone</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Clone without Products</masterLabel>
+        <openType>sidebar</openType>
+        <page>QuoteClonePage</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>ClonewithProducts</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Clone with Products</masterLabel>
+        <openType>newWindow</openType>
+        <page>QuoteCloneWithLineItems</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>Configure</fullName>
+        <availability>online</availability>
+        <description>This is a Custom Button on Quote page to invoke CPQ in Lightning Experience</description>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>Configure</masterLabel>
+        <openType>noSidebar</openType>
+        <protected>false</protected>
+        <url>/apex/hybridcpq?id={!Quote.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Create_Contract</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Contract</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+var namespace_prefix = &apos;&apos;; 
+
+var result = sforce.connection.describeGlobal(); 
+var TOKEN_OBJ = &quot;Party__c&quot;; 
+var sobjects = result.getArray(&quot;sobjects&quot;); 
+
+for(var i=0; i&lt;sobjects.length; i++) { 
+var sobjName = sobjects[i].name; 
+var str = sobjName.split(&quot;__&quot;); 
+//if there are 3 values there is a namespace 
+if (str.length == 3){ 
+//Is it one of ours? 
+var sobj = str[1].valueOf() +&apos;__c&apos;; 
+if(sobj == TOKEN_OBJ) { 
+namespace_prefix = str[0].valueOf(); 
+} 
+} 
+} 
+if(namespace_prefix != &quot;&quot;){ 
+namespace_prefix+= &apos;.&apos;; 
+} 
+
+var result = sforce.apex.execute(namespace_prefix+&quot;ContractServiceResource&quot;,&quot;createContractWithTemplate&quot;, {contextId: &apos;{!Quote.Id}&apos;}); 
+
+window.location.href = &apos;/&apos; + result + &apos;/e?retURL=%2F&apos; + result;</url>
+    </webLinks>
+    <webLinks>
+        <fullName>GenerateDocumentPDF</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Generate Document PDF</masterLabel>
+        <openType>newWindow</openType>
+        <page>QuoteDocumentPdf</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>PickFrameContract</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Pick Frame Contract</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+
+
+
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+
+
+
+var namespace_prefix = &apos;&apos;; 
+
+
+
+
+
+
+
+var result = sforce.connection.describeGlobal(); 
+
+
+
+var TOKEN_OBJ = &quot;Party__c&quot;; 
+
+
+
+var sobjects = result.getArray(&quot;sobjects&quot;); 
+
+
+
+
+
+
+
+for(var i=0; i&lt;sobjects.length; i++) { 
+
+
+
+var sobjName = sobjects[i].name; 
+
+
+
+var str = sobjName.split(&quot;__&quot;); 
+
+
+
+//if there are 3 values there is a namespace 
+
+
+
+if (str.length == 3){ 
+
+
+
+//Is it one of ours? 
+
+
+
+var sobj = str[1].valueOf() +&apos;__c&apos;; 
+
+
+
+if(sobj == TOKEN_OBJ) { 
+
+
+
+namespace_prefix = str[0].valueOf(); 
+
+
+
+} 
+
+
+
+} 
+
+
+
+} 
+
+
+
+if(namespace_prefix == &quot;&quot;){ 
+
+
+
+var acctId = &apos;{!Quote.OpportunityAccountId__c}&apos;; 
+
+if(acctId!=&apos;&apos;) 
+
+window.location = &apos;apex/FrameContractPage?accountValue=&apos; + &apos;{!Quote.OpportunityAccountId__c}&apos;+&apos;&amp;Id=&apos; +&apos;{!Quote.Id}&apos;; 
+
+} 
+
+else { 
+
+var acctId = &apos;{!Quote.OpportunityAccountId__c}&apos;; 
+
+if(acctId!=&apos;&apos;) 
+
+window.location = &apos;apex/&apos;+namespace_prefix+&apos;__FrameContractPage?accountValue=&apos; + &apos;{!Quote.OpportunityAccountId__c}&apos;+&apos;&amp;Id=&apos; +&apos;{!Quote.Id}&apos;; 
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>RevokeSignature</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Revoke eSignature</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+
+
+
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+
+
+
+
+
+
+
+var namespace_prefix = &apos;&apos;; 
+
+
+
+var result = sforce.connection.describeGlobal(); 
+
+
+
+var TOKEN_OBJ = &quot;Party__c&quot;; 
+
+
+
+var sobjects = result.getArray(&quot;sobjects&quot;); 
+
+
+
+
+
+
+
+for(var i=0; i&lt;sobjects.length; i++) 
+
+
+
+{ 
+
+
+
+var sobjName = sobjects[i].name; 
+
+
+
+var str = sobjName.split(&quot;__&quot;); 
+
+
+
+
+
+
+
+//if there are 3 values there is a namespace 
+
+
+
+if (str.length == 3) 
+
+
+
+{ 
+
+
+
+//Is it one of ours? 
+
+
+
+var sobj = str[1].valueOf() +&apos;__c&apos;; 
+
+
+
+if(sobj == TOKEN_OBJ) 
+
+
+
+{ 
+
+
+
+namespace_prefix = str[0].valueOf(); 
+
+
+
+break; 
+
+
+
+} 
+
+
+
+} 
+
+
+
+} 
+
+
+
+
+
+
+
+if(namespace_prefix != &quot;&quot;) 
+
+
+
+{ 
+
+
+
+namespace_prefix += &apos;.&apos;; 
+
+
+
+} 
+
+
+
+
+
+
+
+if(&apos;{!$User.DocuSignEmail__c}&apos; == null || &apos;{!$User.DocuSignEmail__c}&apos; == &quot;&quot;) 
+
+
+
+{ 
+
+
+
+alert(&apos;Login user does not have valid DocuSign account.&apos;); 
+
+
+
+} 
+
+
+
+else { 
+
+
+
+var result = sforce.apex.execute(namespace_prefix+&quot;ContractDocuSignResource&quot;,&quot;voidEnvelopes&quot;, {objectId: &apos;{!Quote.Id}&apos;, senderEmail:&apos;{!$User.DocuSignEmail__c }&apos;}); 
+
+if(result == &apos;OK&apos;) 
+
+{ 
+
+window.location.reload(); 
+
+} 
+
+else 
+
+{ 
+
+alert(result); 
+
+} 
+
+
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>SavePDF</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Save PDF</masterLabel>
+        <openType>replace</openType>
+        <page>QuotePdfSave</page>
+        <protected>false</protected>
+    </webLinks>
+    <webLinks>
+        <fullName>SendForSignature</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Send for eSignature</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+
+var namespace_prefix = &apos;&apos;; 
+
+
+
+var result = sforce.connection.describeGlobal(); 
+
+var TOKEN_OBJ = &quot;Party__c&quot;; 
+
+var sobjects = result.getArray(&quot;sobjects&quot;); 
+
+
+
+for(var i=0; i&lt;sobjects.length; i++) { 
+
+var sobjName = sobjects[i].name; 
+
+var str = sobjName.split(&quot;__&quot;); 
+
+//if there are 3 values there is a namespace 
+
+if (str.length == 3){ 
+
+//Is it one of ours? 
+
+var sobj = str[1].valueOf() +&apos;__c&apos;; 
+
+if(sobj == TOKEN_OBJ) { 
+
+namespace_prefix = str[0].valueOf(); 
+
+} 
+
+} 
+
+} 
+
+if(namespace_prefix != &quot;&quot;){ 
+
+namespace_prefix+= &apos;__&apos;; 
+
+} 
+
+
+
+
+
+if(&apos;{!$User.DocuSignEmail__c}&apos; == null || &apos;{!$User.DocuSignEmail__c}&apos; == &quot;&quot;) 
+
+{ 
+
+alert(&apos; Login user does not have valid DocuSign account.&apos;); 
+
+} 
+
+else { 
+
+window.location = &apos;apex/&apos;+namespace_prefix+&apos;QuoteDocuSignEnvelope?Id=&apos; +&apos;{!Quote.Id}&apos;+&apos;&amp;senderDocuSignEmail=&apos; +&apos;{!$User.DocuSignEmail__c}&apos;; 
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>TelcoPDF</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>page</linkType>
+        <masterLabel>Generate PDF</masterLabel>
+        <openType>newWindow</openType>
+        <page>QuotePDF</page>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+    </webLinks>
+    <webLinks>
+        <fullName>UpdateContract</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Update Contract</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+var namespace_prefix = &apos;&apos;; 
+
+var result = sforce.connection.describeGlobal(); 
+var TOKEN_OBJ = &quot;Party__c&quot;; 
+var sobjects = result.getArray(&quot;sobjects&quot;); 
+
+for(var i=0; i&lt;sobjects.length; i++) { 
+var sobjName = sobjects[i].name; 
+var str = sobjName.split(&quot;__&quot;); 
+//if there are 3 values there is a namespace 
+if (str.length == 3){ 
+//Is it one of ours? 
+var sobj = str[1].valueOf() +&apos;__c&apos;; 
+if(sobj == TOKEN_OBJ) { 
+namespace_prefix = str[0].valueOf(); 
+} 
+} 
+} 
+if(namespace_prefix != &quot;&quot;){ 
+namespace_prefix+= &apos;.&apos;; 
+} 
+
+var result = sforce.apex.execute(namespace_prefix+&quot;ContractServiceResource&quot;,&quot;updateContract&quot;, {contextId: &apos;{!Quote.Id}&apos;});
+alert(result);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>UpdateEnvelopeStatus</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Update Envelope Status</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+
+
+
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+
+
+
+
+
+
+
+var namespace_prefix = &apos;&apos;; 
+
+
+
+var result = sforce.connection.describeGlobal(); 
+
+
+
+var TOKEN_OBJ = &quot;Party__c&quot;; 
+
+
+
+var sobjects = result.getArray(&quot;sobjects&quot;); 
+
+
+
+
+
+
+
+
+
+
+
+for(var i=0; i&lt;sobjects.length; i++) 
+
+
+
+{ 
+
+
+
+ var sobjName = sobjects[i].name; 
+
+
+
+ var str = sobjName.split(&quot;__&quot;); 
+
+
+
+
+
+
+
+ //if there are 3 values there is a namespace 
+
+
+
+ if (str.length == 3)
+
+
+
+ { 
+
+
+
+  //Is it one of ours? 
+
+
+
+  var sobj = str[1].valueOf() +&apos;__c&apos;; 
+
+
+
+  if(sobj == TOKEN_OBJ) 
+
+
+
+  { 
+
+
+
+    namespace_prefix = str[0].valueOf();
+
+
+
+    break;
+
+
+
+  } 
+
+
+
+ } 
+
+
+
+} 
+
+
+
+
+
+
+
+
+
+
+
+if(namespace_prefix != &quot;&quot;)
+
+
+
+{ 
+
+
+
+  namespace_prefix += &apos;.&apos;;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+  var result = sforce.apex.execute(namespace_prefix+&quot;ContractDocuSignResource&quot;,&quot;updateEnvelopeStatus&quot;, {objectId: &apos;{!Quote.Id}&apos;});
+
+if(result == &apos;OK&apos;) 
+
+{ 
+
+window.location.reload(); 
+
+} 
+
+else 
+
+{ 
+
+alert(result); 
+
+}</url>
+    </webLinks>
+</CustomObject>
